@@ -1,4 +1,11 @@
-<?php include 'includes/header.php'; ?>          
+<?php
+include 'config/config.php';
+include 'libraries/Database.php';
+include 'includes/header.php';
+
+// Create DB Object
+$db = new Database();
+?>          
           
           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>
