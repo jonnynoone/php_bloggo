@@ -1,3 +1,9 @@
+<?php
+include 'config/config.php';
+include 'libraries/Database.php';
+include 'helpers/format_helper.php';
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
