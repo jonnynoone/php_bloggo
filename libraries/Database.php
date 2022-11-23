@@ -1,6 +1,7 @@
 <?php
 
-class Database {
+class Database
+{
     public $host = DB_HOST;
     public $username = DB_USER;
     public $password = DB_PASS;
@@ -9,13 +10,15 @@ class Database {
     public $link;
     public $error;
 
-    public function __construct() {
+    public function __construct()
+    {
         // Call connect function
         $this->connect();
     }
 
     // CONNECT
-    private function connect() {
+    private function connect()
+    {
         $this->link = new mysqli($this->host, $this->username, $this->password, $this->db_name);
 
         if(!$this->link) {
@@ -25,7 +28,8 @@ class Database {
     }
 
     // SELECT
-    public function select($query) {
+    public function select($query)
+    {
         $result = $this->link->query($query) or die($this->error.__LINE__);
         if($result->num_rows > 0) {
             return $result;
@@ -35,7 +39,8 @@ class Database {
     }
 
     // INSERT
-    public function insert($query) {
+    public function insert($query)
+    {
         $insert_row = $this->link->query($query) or die($this->error.__LINE__);
 
         // Validate 
@@ -48,7 +53,8 @@ class Database {
     }
 
     // UPDATE
-    public function update($query) {
+    public function update($query)
+    {
         $update_row = $this->link->query($query) or die($this->error.__LINE__);
 
         // Validate 
@@ -61,7 +67,8 @@ class Database {
     }
 
     // DELETE
-    public function delete($query) {
+    public function delete($query)
+    {
         $delete_row = $this->link->query($query) or die($this->error.__LINE__);
 
         // Validate 
